@@ -14,7 +14,10 @@ function userDisplay(results) {
         randomUser.innerHTML = `
             <img src="${user.picture.large}">
             <h4>City : ${user.location.city}</h4>
+            <h5>State : ${user.location.state}</h5>
+            <h5>Country : ${user.location.country}</h5>
             <p>Coordinates : ${user.location.coordinates.latitude} , ${user.location.coordinates.longitude}</p>
+            <p>Street : ${user.location.street.number},${user.location.street.name}</p>
             <p>Timezone : ${user.location.timezone.offset} , ${user.location.timezone.description}</p>
             <button onclick="randomBtn()" class="btn btn-success">Random User</button>
         `
@@ -26,7 +29,7 @@ const randomBtn = () => {
         .then(data => displayBtn(data))
 }
 const displayBtn = something => {
-    // console.log(something.results)
+    console.log(something.results)
     const results = something.results
     userDisplay(results)
 
