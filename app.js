@@ -1,12 +1,16 @@
-fetch('https://randomuser.me/api/')
-    .then(res => res.json())
-    .then(data => displayUser(data))
+const randomBtn = () => {
+    fetch('https://randomuser.me/api/')
+        .then(res => res.json())
+        .then(data => displayUser(data))
+}
+randomBtn()
 
 const displayUser = users => {
     const results = users.results
     userDisplay(results)
 
 }
+
 function userDisplay(results) {
     results.forEach(user => {
         console.log(user.location)
@@ -22,15 +26,4 @@ function userDisplay(results) {
             <button onclick="randomBtn()" class="btn btn-success">Random User</button>
         `
     })
-}
-const randomBtn = () => {
-    fetch('https://randomuser.me/api/')
-        .then(res => res.json())
-        .then(data => displayBtn(data))
-}
-const displayBtn = something => {
-    console.log(something.results)
-    const results = something.results
-    userDisplay(results)
-
 }
