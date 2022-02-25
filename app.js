@@ -7,11 +7,6 @@ randomBtn()
 
 const displayUser = users => {
     const results = users.results
-    userDisplay(results)
-
-}
-
-function userDisplay(results) {
     results.forEach(user => {
         console.log(user.location)
         const randomUser = document.getElementById('random-user')
@@ -26,4 +21,5 @@ function userDisplay(results) {
             <button onclick="randomBtn()" class="btn btn-success">Random User</button>
         `
     })
+
 }
